@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './assets/css/index.scss';
+import Router from './router/index.jsx'
 import * as serviceWorker from './serviceWorker';
+
+const App = Router()
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

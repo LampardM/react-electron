@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './BrowserContent.scss'
 
 const BrowserContent = (props) => {
+  const searchChangeHandler = () => {}
 
   useEffect(() => {
-    console.log(props.searchContent, 'searchContent');
+    searchChangeHandler(props.searchContent)
   })
 
   return (
-    <div></div>
+    <div>{props.searchContent}</div>
   )
 }
 

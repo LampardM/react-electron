@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './BrowserBar.scss'
 
 const BrowserBar = (props) => {
-  const [search, setValues] = useState('');
-  const [isFocused, setIsFocused] = useState(false)
+  const [isFocused, setIsFocused] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
+
+  useEffect(() => {})
   
   const preStack = () => {
     console.log('pre');
@@ -15,11 +17,11 @@ const BrowserBar = (props) => {
     console.log('refresh');
   }
   const searchChange = (e) => {
-    setValues(e.target.value)
+    setSearchValue(e.target.value)
   }
   const searchDownEnter = (event) => {
     if(event.keyCode === 13) {
-      console.log('enter');
+      props.searchAction(searchValue)
     }
   }
 
@@ -32,7 +34,8 @@ const BrowserBar = (props) => {
       </div>
       <div className="bar-center">
         <input 
-          type="text"value={search} 
+          type="text"
+          value={searchValue} 
           onFocus={() => setIsFocused(true)} 
           onBlur={() => setIsFocused(false)} 
           onChange={searchChange}

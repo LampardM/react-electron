@@ -5,6 +5,7 @@
   "main": "main.js",
   "homepage": ".",
   "dependencies": {
+    "@material-ui/core": "^4.4.2",
     "electron": "^6.0.10",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",

@@ -1,12 +1,10 @@
 import React from 'react';
-import '../assets/css/App.scss';
+import BrowserBar from '../components/BrowserBar/BrowserBar.jsx'
 
-function Index() {
+export default function Index() {
   return (
     <div className="App">
-      React
+      <BrowserBar />
     </div>
-  );
+  )
 }
-
-export default Index;

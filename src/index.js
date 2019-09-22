@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './assets/css/index.scss';
 import Router from './router/index.jsx'
 import * as serviceWorker from './serviceWorker';
+import './assets/fonts/iconfont.css'
+import './assets/css/index.scss';
 
 const App = Router()
 

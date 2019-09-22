@@ -1,0 +1,16 @@
+{
+  "id": "1022636",
+  "name": "day.online",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "7504223",
+      "name": "箭头",
+      "font_class": "jiantou",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}

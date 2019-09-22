@@ -1,0 +1,17 @@
+.bar-container {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  .bar-left {
+    display: flex;
+    align-items: center;
+    span {
+      padding: 0 8px;
+    }
+  }
+  .bar-center {
+    flex: 1;
+    color: #303f9f;
+  }
+}

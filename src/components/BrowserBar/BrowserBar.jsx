@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react'
 import './BrowserBar.scss'
 
-const BrowserBar = (props) => {
-  const [isFocused, setIsFocused] = useState(false);
-  const [searchValue, setSearchValue] = useState('');
+export default function BrowserBar(props) {
+  const [isFocused, setIsFocused] = useState(false)
+  const [searchValue, setSearchValue] = useState('')
+  const inputRef = useRef(null)
 
-  useEffect(() => {})
+  useEffect(() => {
+    console.log(isFocused);
+  })
   
   const preStack = () => {
     console.log('pre');
@@ -22,6 +25,8 @@ const BrowserBar = (props) => {
   const searchDownEnter = (event) => {
     if(event.keyCode === 13) {
       props.searchAction(searchValue)
+      setIsFocused(false)
+      inputRef.current.blur()
     }
   }
 
@@ -36,6 +41,7 @@ const BrowserBar = (props) => {
         <input 
           type="text"
           value={searchValue} 
+          ref={inputRef}
           onFocus={() => setIsFocused(true)} 
           onBlur={() => setIsFocused(false)} 
           onChange={searchChange}
@@ -47,5 +53,3 @@ const BrowserBar = (props) => {
     </div>
   )
 }
-
-export default BrowserBar;

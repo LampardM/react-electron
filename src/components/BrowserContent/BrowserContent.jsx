@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useImperativeHandle, forwardRef } from 'react'
 import './BrowserContent.scss'
 
-const BrowserContent = (props) => {
-  const searchChangeHandler = () => {}
+function BrowserContent(props, ref) {
+  const contentRef = useRef();
 
-  useEffect(() => {
-    searchChangeHandler(props.searchContent)
-  })
+  useImperativeHandle(ref, () => ({
+    browserLoad: () => {
+      if(props.searchContent) {
+        console.log('load', props.searchContent);
+      }
+    }
+  }));
 
   return (
-    <div>{props.searchContent}</div>
+    <div ref={contentRef}>{props.searchContent}</div>
   )
 }
-
-export default BrowserContent;
+const BrowserContentRef = forwardRef(BrowserContent);
+export default BrowserContentRef;
